@@ -3,6 +3,7 @@ package com.example.myshop.adapter;
 import android.content.Context;
 import android.net.Uri;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
@@ -32,7 +33,8 @@ public class CartAdapter extends MySimpleAdapter<ShoppingCart> implements MyBase
         this.mCheckBox = checkBox;
         this.mTextTotal = textView;
 
-        mProvider = new CartProvider(mContext);
+        mProvider = CartProvider.getInstance(mContext);
+        Log.i("provider", "" + mProvider);
         setOnItemClickListener(this);
         mCheckBox.setOnClickListener(this);
 
@@ -170,4 +172,5 @@ public class CartAdapter extends MySimpleAdapter<ShoppingCart> implements MyBase
         setCheckAll(this.mCheckBox.isChecked());
         showPrice();
     }
+
 }

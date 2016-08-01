@@ -2,6 +2,7 @@ package com.example.myshop.adapter;
 
 import android.content.Context;
 import android.net.Uri;
+import android.util.Log;
 import android.view.View;
 
 import com.example.myshop.R;
@@ -22,7 +23,8 @@ public class HotWareAdapter extends MySimpleAdapter<Wares>{
 
     public HotWareAdapter(Context mContext, List<Wares> datas) {
         super(mContext, datas, R.layout.template_hot_wares);
-        mProvider = new CartProvider(mContext);
+        mProvider = CartProvider.getInstance(mContext);
+        Log.i("provider", "" + mProvider);
     }
 
     @Override

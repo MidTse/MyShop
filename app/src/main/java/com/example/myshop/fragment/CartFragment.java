@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,8 @@ public class CartFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cart,container,false);
         initView(view);
-        mCartProvider = new CartProvider(getContext());
+        mCartProvider = CartProvider.getInstance(getContext());
+        Log.i("provider", "" + mCartProvider);
         showData();
         return  view;
     }
@@ -63,6 +65,7 @@ public class CartFragment extends Fragment implements View.OnClickListener{
     }
 
     private void showData() {
+
         List<ShoppingCart> datas = mCartProvider.getAll();
         mAdapter = new CartAdapter(getContext(), datas, mCheckBox, mTextTotal);
         mRecyclerView.setAdapter(mAdapter);
@@ -77,9 +80,7 @@ public class CartFragment extends Fragment implements View.OnClickListener{
         mAdapter.addData(carts);
         mAdapter.isCheckAll();
         mAdapter.showPrice();
-        showDelCtrl();
 
-//        mAdapter
     }
 
     @Override
@@ -98,7 +99,6 @@ public class CartFragment extends Fragment implements View.OnClickListener{
             } else if (action == ACTION_CAMPLATE) {
 
                 hideDelCtrl();
-
             }
 
         }
@@ -132,4 +132,6 @@ public class CartFragment extends Fragment implements View.OnClickListener{
         mAdapter.showPrice();
         mCheckBox.setChecked(true);
     }
+
+
 }

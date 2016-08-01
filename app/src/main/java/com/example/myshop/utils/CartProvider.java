@@ -1,6 +1,7 @@
 package com.example.myshop.utils;
 
 import android.content.Context;
+import android.util.Log;
 import android.util.SparseArray;
 
 import com.example.myshop.bean.ShoppingCart;
@@ -15,11 +16,21 @@ import java.util.List;
 public class CartProvider {
 
     public static final String CART_JSON="cart_json";
-
     private SparseArray<ShoppingCart> datas = null;
     private Context mContext;
 
-    public CartProvider(Context mContext) {
+    private static CartProvider mProvider;
+    public static CartProvider getInstance(Context context) {
+        if (mProvider != null) {
+            return mProvider;
+        } else {
+            mProvider = new CartProvider(context);
+            return mProvider;
+        }
+
+    }
+
+    private CartProvider(Context mContext) {
         this.mContext = mContext;
         datas = new SparseArray<>(10);
         listTosparse();
@@ -62,6 +73,7 @@ public class CartProvider {
         List<ShoppingCart> carts = sparseToList();
         PreferencesUtils.putString(mContext,CART_JSON,JSONUtil.toJSON(carts));
     }
+
 
     //将sparseArray转换为容器数据
     private List<ShoppingCart> sparseToList() {
