@@ -14,11 +14,7 @@
         android:layout_height="@dimen/ware_grid_img_height"
         android:id="@+id/drawee_view"
         android:layout_alignParentLeft="true"
-        android:layout_gravity="center"
-        />
-
-
-
+        android:layout_gravity="center" />
 
         <TextView
             android:id="@+id/text_title"
@@ -27,9 +23,7 @@
             android:layout_marginTop="20dp"
             android:textColor="@color/gray"
             android:textSize="16sp"
-            android:maxLines="3"
-
-            />
+            android:maxLines="3"/>
 
         <TextView
             android:id="@+id/text_price"
@@ -37,9 +31,5 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textColor="@color/crimson"
-            android:layout_gravity="right"
-            />
-
-
-
+            android:layout_gravity="right"/>
 </LinearLayout>

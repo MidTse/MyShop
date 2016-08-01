@@ -34,7 +34,6 @@ public class CartAdapter extends MySimpleAdapter<ShoppingCart> implements MyBase
         this.mTextTotal = textView;
 
         mProvider = CartProvider.getInstance(mContext);
-        Log.i("provider", "" + mProvider);
         setOnItemClickListener(this);
         mCheckBox.setOnClickListener(this);
 

@@ -37,7 +37,6 @@
         android:layout_centerVertical="true"
         android:textColor="@color/white"
         android:visibility="gone"
-        android:text="nihao"
         style="@android:style/Widget.Material.Toolbar.Button.Navigation"
         />
 

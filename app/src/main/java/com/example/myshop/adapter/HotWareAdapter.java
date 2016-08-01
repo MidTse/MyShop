@@ -24,7 +24,6 @@ public class HotWareAdapter extends MySimpleAdapter<Wares>{
     public HotWareAdapter(Context mContext, List<Wares> datas) {
         super(mContext, datas, R.layout.template_hot_wares);
         mProvider = CartProvider.getInstance(mContext);
-        Log.i("provider", "" + mProvider);
     }
 
     @Override

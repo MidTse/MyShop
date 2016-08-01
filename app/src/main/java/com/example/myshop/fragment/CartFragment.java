@@ -44,7 +44,6 @@ public class CartFragment extends Fragment implements View.OnClickListener{
         View view = inflater.inflate(R.layout.fragment_cart,container,false);
         initView(view);
         mCartProvider = CartProvider.getInstance(getContext());
-        Log.i("provider", "" + mCartProvider);
         showData();
         return  view;
     }
@@ -70,7 +69,7 @@ public class CartFragment extends Fragment implements View.OnClickListener{
         mAdapter = new CartAdapter(getContext(), datas, mCheckBox, mTextTotal);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL_LIST));
+
     }
 
     public void refData() {
@@ -80,6 +79,7 @@ public class CartFragment extends Fragment implements View.OnClickListener{
         mAdapter.addData(carts);
         mAdapter.isCheckAll();
         mAdapter.showPrice();
+        hideDelCtrl();
 
     }
 
