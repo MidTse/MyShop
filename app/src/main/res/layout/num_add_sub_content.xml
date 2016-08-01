@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:background="@drawable/selector_number_add_sub">
+
+    <Button
+        android:id="@+id/btn_sub"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:textColor="@color/black"
+        android:background="@drawable/bg_btn_style_white"
+        android:text="一"/>
+
+    <TextView
+        android:id="@+id/txt_num"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:textColor="@color/black"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:textColor="@color/black"
+        android:background="@drawable/bg_btn_style_white"
+        android:text="十"/>
+
+</LinearLayout>
