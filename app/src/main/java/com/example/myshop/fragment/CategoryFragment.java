@@ -51,7 +51,6 @@ public class CategoryFragment extends Fragment implements Pager.OnPageListener<W
     private CategoryAdapter mCategoryAdapter;
     private WaresAdapter mWaresAdatper;
 
-
     private OkHttpHelper mHttpHelper = OkHttpHelper.getInstance();
     private Pager.Builder builder;
 
