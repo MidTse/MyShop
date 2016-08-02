@@ -75,7 +75,8 @@ public abstract class MyBaseAdapter<T, H extends MyViewHolder> extends RecyclerV
     public void addData(int position, List<T> datas) {
         if (datas != null && datas.size() > 0) {
             this.mDatas.addAll(datas);
-            this.notifyItemRangeChanged(position, datas.size());
+           // this.notifyItemRangeChanged(position, datas.size());
+            this.notifyDataSetChanged();
         }
     }
 

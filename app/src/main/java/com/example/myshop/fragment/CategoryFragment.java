@@ -27,9 +27,13 @@ import com.example.myshop.adapter.decortion.DividerItemDecoration;
 import com.example.myshop.bean.Banner;
 import com.example.myshop.bean.Category;
 import com.example.myshop.bean.Page;
+import com.example.myshop.bean.ShoppingCart;
 import com.example.myshop.bean.Wares;
 import com.example.myshop.http.OkHttpHelper;
 import com.example.myshop.http.SpotsCallBack;
+import com.example.myshop.utils.CartProvider;
+import com.example.myshop.utils.Pager;
+import com.google.gson.reflect.TypeToken;
 import com.squareup.okhttp.Response;
 
 import java.util.HashMap;
@@ -37,7 +41,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class CategoryFragment extends Fragment {
+public class CategoryFragment extends Fragment implements Pager.OnPageListener<Wares>{
 
     private RecyclerView mRecyclerview;
     private RecyclerView mRecyclerviewWares;
@@ -49,17 +53,7 @@ public class CategoryFragment extends Fragment {
 
 
     private OkHttpHelper mHttpHelper = OkHttpHelper.getInstance();
-
-    private int currPage=1;
-    private int totalPage=1;
-    private int pageSize=10;
-    private long category_id=0;
-
-    private  static final int STATE_NORMAL=0;
-    private  static final int STATE_REFREH=1;
-    private  static final int STATE_MORE=2;
-
-    private int state=STATE_NORMAL;
+    private Pager.Builder builder;
 
     @Nullable
     @Override
@@ -72,53 +66,9 @@ public class CategoryFragment extends Fragment {
         mRefreshlayout = (MaterialRefreshLayout) view.findViewById(R.id.refresh);
 
         requestCategoryData();
-
         requestBannerData();
-
-        initRefreshLayout();
-
         return view;
     }
-
-    private void initRefreshLayout() {
-        mRefreshlayout.setLoadMore(true);
-        mRefreshlayout.setMaterialRefreshListener(new MaterialRefreshListener() {
-            @Override
-            public void onRefresh(MaterialRefreshLayout materialRefreshLayout) {
-
-                refreshData();
-
-            }
-
-            @Override
-            public void onRefreshLoadMore(MaterialRefreshLayout materialRefreshLayout) {
-
-                if(currPage <=totalPage)
-                    loadMoreData();
-                else{
-                    Toast.makeText(getContext(), "已经加载完毕，没有更多了哦！！",Toast.LENGTH_SHORT).show();
-                    mRefreshlayout.finishRefreshLoadMore();
-                }
-            }
-        });
-    }
-
-    private  void refreshData(){
-
-        currPage =1;
-        state=STATE_REFREH;
-        requestWares(category_id);
-
-    }
-
-    private void loadMoreData(){
-
-        currPage = ++currPage;
-        state = STATE_MORE;
-        requestWares(category_id);
-
-    }
-
 
     private void requestCategoryData() {
 
@@ -129,8 +79,7 @@ public class CategoryFragment extends Fragment {
             public void onSuccess(Response response, List<Category> categories) {
                 showCategoryData(categories);
                 if (categories != null && categories.size()>0 ) {
-                    category_id = categories.get(0).getId();
-                    requestWares(category_id);
+                    requestWares(categories.get(0).getId());
                 }
             }
 
@@ -165,22 +114,23 @@ public class CategoryFragment extends Fragment {
     }
 
     private void requestWares(long categoryId) {
-        String url = Contants.API.WARES_LIST+"?categoryId="+categoryId+"&curPage="+currPage+"&pageSize="+pageSize;
-        mHttpHelper.doGet(url, new SpotsCallBack<Page<Wares>>(getContext()) {
 
-            @Override
-            public void onSuccess(Response response, Page<Wares> waresPage) {
-                currPage = waresPage.getCurrentPage();
-                totalPage = waresPage.getTotalPage();
-                showWaresData(waresPage.getList());
-            }
+        if (builder != null) {
+            builder.setCategoryId(categoryId)
+                    .reBulid()
+                    .request();
 
-            @Override
-            public void onError(Response response, int code, Exception e) {
+        } else {
+            builder = Pager.newBuilder();
+            builder.setCanLoadMore(true)
+                    .setPageListener(this)
+                    .setRefreshLayout(mRefreshlayout)
+                    .setUrl(Contants.API.WARES_LIST)
+                    .setCategoryId(categoryId)
+                    .build(getContext(), new TypeToken<Page<Wares>>() {}.getType())
+                    .request();
 
-            }
-        });
-
+        }
     }
 
     private void initSliderView(List<Banner> banners) {
@@ -211,11 +161,7 @@ public class CategoryFragment extends Fragment {
             public void onItemClick(View view, int position) {
 
                 Category category = mCategoryAdapter.getItem(position);
-                category_id = category.getId();
-                currPage = 1;
-                state = STATE_NORMAL;
-
-                requestWares(category_id);
+                requestWares(category.getId());
 
 
             }
@@ -229,47 +175,37 @@ public class CategoryFragment extends Fragment {
 
     }
 
-    private void showWaresData(List<Wares> list) {
+    @Override
+    public void load(List<Wares> datas, int totalPage, int totalCount) {
+        if (mWaresAdatper == null) {
+            mWaresAdatper = new WaresAdapter(getContext(), datas);
+            mRecyclerviewWares.setAdapter(mWaresAdatper);
 
-        switch (state) {
-            case STATE_NORMAL:
-                if (mWaresAdatper == null) {
-                    mWaresAdatper = new WaresAdapter(getContext(), list);
-                    mRecyclerviewWares.setAdapter(mWaresAdatper);
-
-                    mRecyclerviewWares.setLayoutManager(new GridLayoutManager(getContext(), 2));
-                    mRecyclerviewWares.setItemAnimator(new DefaultItemAnimator());
-                    mRecyclerviewWares.addItemDecoration(new DividerGridItemDecoration(getContext()));
-                } else {
-                    mWaresAdatper.clear();
-                    mWaresAdatper.addData(list);
-                }
-
-                break;
-
-            case STATE_REFREH:
-                mWaresAdatper.clear();
-                mWaresAdatper.addData(list);
-
-                mRecyclerviewWares.scrollToPosition(0);
-                mRefreshlayout.finishRefresh();
-                break;
-
-            case STATE_MORE:
-                mWaresAdatper.addData(mWaresAdatper.getDatas().size(),list);
-                mRecyclerviewWares.scrollToPosition(mWaresAdatper.getDatas().size());
-                mRefreshlayout.finishRefreshLoadMore();
-                break;
-
+            mRecyclerviewWares.setLayoutManager(new GridLayoutManager(getContext(), 2));
+            mRecyclerviewWares.setItemAnimator(new DefaultItemAnimator());
+            mRecyclerviewWares.addItemDecoration(new DividerGridItemDecoration(getContext()));
+        } else {
+            mWaresAdatper.clear();
+            mWaresAdatper.addData(datas);
         }
-
+        mWaresAdatper.notifyDataSetChanged();
     }
-    
 
+    @Override
+    public void refresh(List<Wares> datas, int totalPage, int totalCount) {
+        mWaresAdatper.clear();
+        mWaresAdatper.addData(datas);
 
+        mRecyclerviewWares.scrollToPosition(0);
+        mWaresAdatper.notifyDataSetChanged();
+    }
 
-
-
+    @Override
+    public void loadMore(List<Wares> datas, int totalPage, int totalCount) {
+        mWaresAdatper.addData(mWaresAdatper.getDatas().size(),datas);
+        mRecyclerviewWares.scrollToPosition(mWaresAdatper.getDatas().size());
+        mWaresAdatper.notifyDataSetChanged();
+    }
 }
 
 
