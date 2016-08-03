@@ -1,5 +1,6 @@
 package com.example.myshop.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.example.myshop.Contants;
 import com.example.myshop.R;
+import com.example.myshop.activity.WareListActivity;
 import com.example.myshop.adapter.HomeCampaignAdapter;
 import com.example.myshop.adapter.decortion.CardViewtemDecortion;
 import com.example.myshop.bean.Banner;
@@ -153,6 +155,10 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view, Campaign campaign) {
                 Toast.makeText(getActivity(), ""+ campaign.getTitle(), Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getActivity(), WareListActivity.class);
+                intent.putExtra(Contants.COMPAINGAIN_ID, campaign.getId());
+                startActivity(intent);
             }
         });
 

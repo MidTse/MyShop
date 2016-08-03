@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.myshop.R;
 import com.example.myshop.bean.ShoppingCart;
@@ -36,15 +37,18 @@ public class HotWareAdapter extends MySimpleAdapter<Wares>{
 //        holder.getTextView(R.id.text_title).setText(item.getName());
         holder.getTextView(R.id.text_price).setText("￥" + item.getPrice());
 
+        Button button = holder.getButton(R.id.btn_add);
+        if (button != null) {
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-        holder.getButton(R.id.btn_add).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                    mProvider.put(convertData(item));
+                    ToastUtils.show(mContext, "加入购物车成功！！");
+                }
+            });
+        }
 
-                mProvider.put(convertData(item));
-                ToastUtils.show(mContext, "加入购物车成功！！");
-            }
-        });
     }
 
     public ShoppingCart convertData(Wares item) {
@@ -57,5 +61,10 @@ public class HotWareAdapter extends MySimpleAdapter<Wares>{
         cart.setPrice(item.getPrice());
 
         return cart;
+    }
+
+    public void resetLayout(int layoutId) {
+        this.mLayoutResId = layoutId;
+        notifyDataSetChanged();
     }
 }

@@ -81,12 +81,12 @@ public class OkHttpHelper {
                             Object object = mGson.fromJson(result, callback.mType);
                             callbackSuccess(callback, response, object);
                         }catch (com.google.gson.JsonParseException e) {
-                            callback.onError(response, response.code(), e);
+                            callbackError(callback, response, e);
                         }
 
                     }
                 }else {
-                    callback.onError(response, response.code(), null);
+                    callbackError(callback, response, null);
                 }
 
             }

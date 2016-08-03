@@ -1,5 +1,8 @@
 package com.example.myshop.adapter;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -96,25 +99,42 @@ public class HomeCampaignAdapter extends RecyclerView.Adapter<HomeCampaignAdapte
         @Override
         public void onClick(View v) {
 
-            HomeCampaign homeCampaign = mDatas.get(getLayoutPosition());
-            switch (v.getId()) {
-                case R.id.imgview_big:
-                    mListener.onClick(v, homeCampaign.getCpOne());
-                    break;
-
-                case R.id.imgview_small_top:
-                    mListener.onClick(v, homeCampaign.getCpTwo());
-                    break;
-
-                case R.id.imgview_small_bottom:
-                    mListener.onClick(v, homeCampaign.getCpThree());
-                    break;
-                default:
-                    break;
-            }
+           startAnim(v);
 
         }
+
+        private void startAnim(final View view) {
+
+            ObjectAnimator animator =  ObjectAnimator.ofFloat(view, "rotationX", 0.0F, 360.0F)
+                    .setDuration(200);
+            animator.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+
+                    HomeCampaign homeCampaign = mDatas.get(getLayoutPosition());
+                    switch (view.getId()) {
+                        case R.id.imgview_big:
+                            mListener.onClick(view, homeCampaign.getCpOne());
+                            break;
+
+                        case R.id.imgview_small_top:
+                            mListener.onClick(view, homeCampaign.getCpTwo());
+                            break;
+
+                        case R.id.imgview_small_bottom:
+                            mListener.onClick(view, homeCampaign.getCpThree());
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            });
+
+            animator.start();
+        }
     }
+
+
 
     public interface OnCampaignClickListener {
         void onClick(View view, Campaign campaign);

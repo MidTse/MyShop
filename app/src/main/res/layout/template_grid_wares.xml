@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/selector_list_item"
     android:orientation="vertical"
     android:padding="5dp"
@@ -12,7 +12,7 @@
     <com.facebook.drawee.view.SimpleDraweeView
         android:layout_width="@dimen/ware_grid_img_width"
         android:layout_height="@dimen/ware_grid_img_height"
-        android:id="@+id/drawee_view"
+        android:id="@+id/draweeview"
         android:layout_alignParentLeft="true"
         android:layout_gravity="center" />
 

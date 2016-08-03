@@ -24,7 +24,7 @@ public class WaresAdapter extends MySimpleAdapter<Wares> {
 
         holder.getTextView(R.id.text_title).setText(item.getName());
         holder.getTextView(R.id.text_price).setText("￥"+item.getPrice());
-        SimpleDraweeView draweeView = (SimpleDraweeView) holder.getView(R.id.drawee_view);
+        SimpleDraweeView draweeView = (SimpleDraweeView) holder.getView(R.id.draweeview);
         draweeView.setImageURI(Uri.parse(item.getImgUrl()));
 
     }

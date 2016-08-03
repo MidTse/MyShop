@@ -10,10 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.cjj.MaterialRefreshLayout;
-import com.cjj.MaterialRefreshListener;
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
@@ -27,11 +25,9 @@ import com.example.myshop.adapter.decortion.DividerItemDecoration;
 import com.example.myshop.bean.Banner;
 import com.example.myshop.bean.Category;
 import com.example.myshop.bean.Page;
-import com.example.myshop.bean.ShoppingCart;
 import com.example.myshop.bean.Wares;
 import com.example.myshop.http.OkHttpHelper;
 import com.example.myshop.http.SpotsCallBack;
-import com.example.myshop.utils.CartProvider;
 import com.example.myshop.utils.Pager;
 import com.google.gson.reflect.TypeToken;
 import com.squareup.okhttp.Response;
@@ -52,7 +48,7 @@ public class CategoryFragment extends Fragment implements Pager.OnPageListener<W
     private WaresAdapter mWaresAdatper;
 
     private OkHttpHelper mHttpHelper = OkHttpHelper.getInstance();
-    private Pager.Builder builder;
+    private Pager pager;
 
     @Nullable
     @Override
@@ -113,22 +109,18 @@ public class CategoryFragment extends Fragment implements Pager.OnPageListener<W
     }
 
     private void requestWares(long categoryId) {
-
-        if (builder != null) {
-            builder.setCategoryId(categoryId)
-                    .reBulid()
-                    .request();
-
-        } else {
-            builder = Pager.newBuilder();
-            builder.setCanLoadMore(true)
+        
+        if (pager == null) {
+            pager = Pager.newBuilder()
                     .setPageListener(this)
                     .setRefreshLayout(mRefreshlayout)
                     .setUrl(Contants.API.WARES_LIST)
-                    .setCategoryId(categoryId)
-                    .build(getContext(), new TypeToken<Page<Wares>>() {}.getType())
-                    .request();
-
+                    .setParam("categoryId", categoryId)
+                    .build(getContext(), new TypeToken<Page<Wares>>() {}.getType());
+            pager.request();
+        } else {
+            pager.putParam("categoryId", categoryId);
+            pager.request();
         }
     }
 

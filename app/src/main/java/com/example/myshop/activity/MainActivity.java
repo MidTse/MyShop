@@ -1,4 +1,4 @@
-package com.example.myshop;
+package com.example.myshop.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import com.example.myshop.R;
 import com.example.myshop.bean.Tab;
 import com.example.myshop.fragment.CartFragment;
 import com.example.myshop.fragment.CategoryFragment;

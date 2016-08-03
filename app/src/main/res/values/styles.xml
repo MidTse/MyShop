@@ -98,4 +98,20 @@
         <item name="android:button">@drawable/selector_checkbox</item>
     </style>
 
+    <style name="customTablayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">#eb4f38</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabPaddingStart">12dp</item>
+        <item name="tabPaddingEnd">12dp</item>
+        <item name="tabBackground">@color/white</item>
+        <item name="tabTextAppearance">@style/customTabTextAppearance</item>
+        <item name="tabSelectedTextColor">#eb4f38</item>
+    </style>
+
+    <style name="customTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/darkgrey</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
 </resources>

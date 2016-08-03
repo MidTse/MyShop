@@ -1,6 +1,7 @@
 package com.example.myshop.utils;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.cjj.MaterialRefreshLayout;
@@ -22,7 +23,6 @@ import java.util.Map;
 public class Pager {
 
     private static Builder mBuilder;
-    private static Pager mPager;
     private OkHttpHelper mHttpHelper;
 
     private static final int STATE_NORMAL = 0;
@@ -45,6 +45,14 @@ public class Pager {
      **/
     public void request() {
         requestData();
+    }
+
+    /**
+     * 用于二次添加参数
+     **/
+    public void  putParam(String key,Object value){
+        mBuilder.params.put(key,value);
+
     }
 
     /**
@@ -93,6 +101,7 @@ public class Pager {
      * **/
     private void requestData() {
         String url = buildUrl();
+        Log.i("url", url);
         mHttpHelper.doGet(url, new RequestCallBack(mBuilder.mContext));
     }
 
@@ -140,9 +149,9 @@ public class Pager {
     private String buildUrlParams() {
 
         HashMap<String, Object> map = mBuilder.params;
+
         map.put("curPage",mBuilder.pageIndex);
         map.put("pageSize",mBuilder.pageSize);
-        map.put("categoryId", mBuilder.categoryId);
 
         StringBuffer sb = new StringBuffer();
         for (Map.Entry<String, Object> entry : map.entrySet()) {
@@ -229,23 +238,11 @@ public class Pager {
             this.mContext = context;
             this.mType = type;
             chkValid();
-            mPager = new Pager();
-            return mPager;
+            return new Pager();
 
         }
 
-        /**
-         * 重新建立builer
-         * **/
-        public Pager reBulid() {
-            chkValid();
-            if (mPager != null) {
-                return mPager;
-            } else {
-                mPager = new Pager();
-                return mPager;
-            }
-        }
+
 
         /**
          * 检查重要参数是否不为空，否则抛出异常
