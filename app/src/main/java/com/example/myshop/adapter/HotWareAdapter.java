@@ -43,24 +43,12 @@ public class HotWareAdapter extends MySimpleAdapter<Wares>{
                 @Override
                 public void onClick(View v) {
 
-                    mProvider.put(convertData(item));
+                    mProvider.put(item);
                     ToastUtils.show(mContext, "加入购物车成功！！");
                 }
             });
         }
 
-    }
-
-    public ShoppingCart convertData(Wares item) {
-        ShoppingCart cart = new ShoppingCart();
-
-        cart.setId(item.getId());
-        cart.setDescription(item.getDescription());
-        cart.setImgUrl(item.getImgUrl());
-        cart.setName(item.getName());
-        cart.setPrice(item.getPrice());
-
-        return cart;
     }
 
     public void resetLayout(int layoutId) {

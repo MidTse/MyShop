@@ -5,6 +5,7 @@ import android.util.Log;
 import android.util.SparseArray;
 
 import com.example.myshop.bean.ShoppingCart;
+import com.example.myshop.bean.Wares;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
@@ -49,6 +50,9 @@ public class CartProvider {
 
         datas.put(cart.getId().intValue(), temp);
         commit();
+    }
+    public void put(Wares wares) {
+        put(convertData(wares));
     }
 
     //向购物车选项更新数据
@@ -110,5 +114,17 @@ public class CartProvider {
         }
 
         return carts;
+    }
+
+    private ShoppingCart convertData(Wares item) {
+        ShoppingCart cart = new ShoppingCart();
+
+        cart.setId(item.getId());
+        cart.setDescription(item.getDescription());
+        cart.setImgUrl(item.getImgUrl());
+        cart.setName(item.getName());
+        cart.setPrice(item.getPrice());
+
+        return cart;
     }
 }

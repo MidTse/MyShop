@@ -56,7 +56,7 @@ public class MyToolbar extends Toolbar{
             }
 
             final Drawable leftIcon = a.getDrawable(R.styleable.MyToolbar_leftButtonIcon);
-            if (rightIcon != null) {
+            if (leftIcon != null) {
 
                 setLeftButtonIcon(leftIcon);
             }

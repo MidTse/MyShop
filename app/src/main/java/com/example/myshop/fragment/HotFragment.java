@@ -1,5 +1,6 @@
 package com.example.myshop.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,13 +16,16 @@ import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.example.myshop.Contants;
 import com.example.myshop.R;
+import com.example.myshop.activity.WareDetailActivity;
 import com.example.myshop.adapter.HotWareAdapter;
+import com.example.myshop.adapter.MyBaseAdapter;
 import com.example.myshop.adapter.decortion.CardViewtemDecortion;
 import com.example.myshop.bean.Page;
 import com.example.myshop.bean.Wares;
 import com.example.myshop.http.OkHttpHelper;
 import com.example.myshop.http.SpotsCallBack;
 import com.example.myshop.utils.Pager;
+import com.example.myshop.utils.ToastUtils;
 import com.google.gson.reflect.TypeToken;
 import com.squareup.okhttp.Response;
 
@@ -60,8 +64,18 @@ public class HotFragment extends Fragment implements Pager.OnPageListener<Wares>
     }
 
     @Override
-    public void load(List<Wares> wares, int totalPage, int totalCount) {
+    public void load(final List<Wares> wares, int totalPage, int totalCount) {
         mAdapter = new HotWareAdapter(getContext(), wares);
+        mAdapter.setOnItemClickListener(new MyBaseAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+
+                Wares ware = wares.get(position);
+                Intent intent = new Intent(getActivity(), WareDetailActivity.class);
+                intent.putExtra(Contants.WARE, ware);
+                startActivity(intent);
+            }
+        });
         mRecyclerview.setAdapter(mAdapter);
         mRecyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         mRecyclerview.setItemAnimator(new DefaultItemAnimator());
