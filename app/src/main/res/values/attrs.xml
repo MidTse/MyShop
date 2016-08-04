@@ -4,6 +4,7 @@
     <declare-styleable name="MyToolbar">
 
         <attr name="rightButtonIcon" format="reference"/>
+        <attr name="leftButtonIcon" format="reference"/>
         <attr name="isShowTitle" format="boolean"/>
         <attr name="searchViewhint" format="string"/>
         <attr name="rightButtonText" format="string"/>

@@ -154,8 +154,8 @@ public class HomeFragment extends Fragment {
         mAdapter.setOnClickListener(new HomeCampaignAdapter.OnCampaignClickListener() {
             @Override
             public void onClick(View view, Campaign campaign) {
-                Toast.makeText(getActivity(), ""+ campaign.getTitle(), Toast.LENGTH_SHORT).show();
 
+//                Toast.makeText(getActivity(), ""+ campaign.getTitle(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), WareListActivity.class);
                 intent.putExtra(Contants.COMPAINGAIN_ID, campaign.getId());
                 startActivity(intent);

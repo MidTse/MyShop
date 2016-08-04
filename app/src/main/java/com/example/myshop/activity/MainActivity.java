@@ -93,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
         mTabhost.getTabWidget().setShowDividers(LinearLayout.SHOW_DIVIDER_NONE);
 
 
-
     }
 
     private void refData() {

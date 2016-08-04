@@ -27,6 +27,7 @@ public class MyToolbar extends Toolbar{
     private EditText mSearchView;
     private TextView mTextTitle;
     private Button mRightButton;
+    private Button mLeftButton;
     
     
     public MyToolbar(Context context) {
@@ -53,6 +54,14 @@ public class MyToolbar extends Toolbar{
 
                 setRightButtonIcon(rightIcon);
             }
+
+            final Drawable leftIcon = a.getDrawable(R.styleable.MyToolbar_leftButtonIcon);
+            if (rightIcon != null) {
+
+                setLeftButtonIcon(leftIcon);
+            }
+
+
 
             final String rightText = a.getString(R.styleable.MyToolbar_rightButtonText);
             if (rightText != null) {
@@ -97,6 +106,7 @@ public class MyToolbar extends Toolbar{
             mTextTitle = (TextView) mView.findViewById(R.id.toolbar_title);
             mSearchView = (EditText) mView.findViewById(R.id.toolbar_searchview);
             mRightButton = (Button) mView.findViewById(R.id.toolbar_rightButton);
+            mLeftButton = (Button) mView.findViewById(R.id.toolbar_leftButton);
             LayoutParams lp = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER_HORIZONTAL);
 
@@ -123,6 +133,21 @@ public class MyToolbar extends Toolbar{
         setRightButtonIcon(getResources().getDrawable(icon));
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    public void  setLeftButtonIcon(Drawable icon){
+
+        if(mLeftButton !=null){
+
+            mLeftButton.setBackground(icon);
+            mLeftButton.setVisibility(VISIBLE);
+        }
+
+    }
+
+    public void setLeftButtonIcon(int icon){
+        setLeftButtonIcon(getResources().getDrawable(icon));
+    }
+
     public void setRightButtonText(String text) {
 
         mRightButton.setText(text);
@@ -133,6 +158,7 @@ public class MyToolbar extends Toolbar{
 
         mRightButton.setOnClickListener(listener);
     }
+
 
     @Override
     public void setTitle( int resId) {
@@ -185,6 +211,11 @@ public class MyToolbar extends Toolbar{
     public Button getRightButton(){
 
         return this.mRightButton;
+    }
+
+    public Button getmLeftButton(){
+
+        return this.mLeftButton;
     }
 
 }

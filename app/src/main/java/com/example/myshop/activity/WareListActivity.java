@@ -72,14 +72,13 @@ public class WareListActivity extends AppCompatActivity implements TabLayout.OnT
     private void initEvent() {
 
         //初始化Toolbar的各项状态，并监听控件事件
-        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        mToolbar.getRightButton().setTag(ACTION_LIST);
+        mToolbar.getmLeftButton().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                WareListActivity.this.finish();
+                onBackPressed();
             }
         });
-        mToolbar.setRightButtonIcon(R.mipmap.icon_grid_32);
-        mToolbar.getRightButton().setTag(ACTION_LIST);
         mToolbar.getRightButton().setOnClickListener(this);
 
         //初始化Tablayout中的tab,并监听tab事件
@@ -144,7 +143,7 @@ public class WareListActivity extends AppCompatActivity implements TabLayout.OnT
         int action = (int) view.getTag();
         switch (action) {
             case ACTION_LIST:
-                mToolbar.setRightButtonIcon(R.mipmap.icon_list_32);
+                mToolbar.setRightButtonIcon(R.mipmap.ic_action_list);
                 mToolbar.getRightButton().setTag(ACTION_GRID);
 
                 mAdapter.resetLayout(R.layout.template_grid_wares);
@@ -152,7 +151,7 @@ public class WareListActivity extends AppCompatActivity implements TabLayout.OnT
                 mRecylerView.setAdapter(mAdapter);
                 break;
             case ACTION_GRID:
-                mToolbar.setRightButtonIcon(R.mipmap.icon_grid_32);
+                mToolbar.setRightButtonIcon(R.mipmap.ic_action_grid);
                 mToolbar.getRightButton().setTag(ACTION_LIST);
 
                 mAdapter.resetLayout(R.layout.template_hot_wares);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <EditText
@@ -14,20 +14,27 @@
         android:drawableLeft="@mipmap/icon_search"
         style="@style/search_view"
         android:hint="请输入搜索内容"
-        android:visibility="gone"
-        />
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/toolbar_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_gravity="center"
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="20sp"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/toolbar_leftButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:textColor="@color/white"
         android:visibility="gone"
-        />
+        style="@android:style/Widget.Material.Toolbar.Button.Navigation"/>
 
     <Button
         android:id="@+id/toolbar_rightButton"
@@ -37,8 +44,7 @@
         android:layout_centerVertical="true"
         android:textColor="@color/white"
         android:visibility="gone"
-        style="@android:style/Widget.Material.Toolbar.Button.Navigation"
-        />
+        style="@android:style/Widget.Material.Toolbar.Button.Navigation"/>
 
 
 </RelativeLayout>

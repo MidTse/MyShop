@@ -16,8 +16,9 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         app:isShowTitle="true"
-        app:navigationIcon="@mipmap/icon_back_32px"
+        app:leftButtonIcon="@mipmap/ic_action_back"
         app:title="商品列表"
+        app:rightButtonIcon="@mipmap/ic_action_grid"
         app:contentInsetEnd="56dp"/>
 
     <android.support.design.widget.TabLayout
