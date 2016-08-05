@@ -24,4 +24,10 @@
 
     </declare-styleable>
 
+
+    <declare-styleable name="ClearEditText">
+
+
+    </declare-styleable>
+
 </resources>
