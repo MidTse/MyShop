@@ -31,4 +31,9 @@ public abstract class SpotsCallBack<T> extends BaseCallback<T> {
     public void onResponse(Response response) {
 
     }
+
+    @Override
+    public void onTokenError(Response response, int code) {
+
+    }
 }

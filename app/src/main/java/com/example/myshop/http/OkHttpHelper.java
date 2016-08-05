@@ -22,6 +22,10 @@ public class OkHttpHelper {
 
     public static final String TAG="OkHttpHelper";
 
+    public static final int TOKEN_MISSING=401;// token 丢失
+    public static final int TOKEN_ERROR=402; // token 错误
+    public static final int TOKEN_EXPIRE=403; // token 过期
+
     private static OkHttpHelper mInstance;
     private OkHttpClient mHttpClient;
     private Gson mGson;
@@ -85,7 +89,13 @@ public class OkHttpHelper {
                         }
 
                     }
-                }else {
+                }
+                else if (response.code() == TOKEN_MISSING || response.code() == TOKEN_ERROR
+                        || response.code() == TOKEN_EXPIRE) {
+
+                    callbackTokenError(callback, response);
+
+                } else {
                     callbackError(callback, response, null);
                 }
 
@@ -158,6 +168,15 @@ public class OkHttpHelper {
             @Override
             public void run() {
                 callback.onError(response, response.code(), e);
+            }
+        });
+    }
+
+    private void callbackTokenError(final BaseCallback callback, final Response response) {
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                callback.onTokenError(response, response.code());
             }
         });
     }

@@ -1,5 +1,8 @@
 package com.example.myshop.activity;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -34,6 +37,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private OkHttpHelper mHttpHelper = OkHttpHelper.getInstance();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +45,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         initView();
         initEvent();
+
     }
 
     private void initView() {

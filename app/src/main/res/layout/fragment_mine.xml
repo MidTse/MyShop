@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/bg_color"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
@@ -35,5 +36,57 @@
             android:textSize="16sp" />
 
     </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/txt_orders"
+                android:drawableLeft="@drawable/icon_list_o"
+                android:text="@string/my_orders"
+                style="@style/mine_txt_itme"/>
+
+            <View style="@style/line_horizontal"/>
+
+            <TextView
+                android:id="@+id/txt_favorite"
+                android:drawableLeft="@drawable/icon_favorite"
+                android:text="@string/my_favorite"
+                style="@style/mine_txt_itme"/>
+
+            <View style="@style/line_horizontal"/>
+
+            <TextView
+                android:id="@+id/txt_location"
+                android:drawableLeft="@drawable/icon_location"
+                android:text="@string/my_addresses"
+                style="@style/mine_txt_itme"/>
+
+            <View style="@style/line_horizontal"/>
+
+            <TextView
+                android:id="@+id/txt_msg"
+                android:drawableLeft="@drawable/icon_msg"
+                android:text="@string/my_msg"
+                style="@style/mine_txt_itme"/>
+
+            <View style="@style/line_horizontal"/>
+
+            <Button
+                android:id="@+id/btn_loginout"
+                android:text="@string/logout"
+                style="@style/bitThemeButton"
+                android:layout_margin="26dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

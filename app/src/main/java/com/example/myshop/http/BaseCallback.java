@@ -57,4 +57,12 @@ public abstract class BaseCallback <T> {
      * @param e
      */
     public abstract void onError(Response response, int code,Exception e) ;
+
+    /**
+     * Token 验证失败。状态码401,402,403 等时调用此方法
+     * @param response
+     * @param code
+     */
+    public abstract void onTokenError(Response response, int code);
+
 }
