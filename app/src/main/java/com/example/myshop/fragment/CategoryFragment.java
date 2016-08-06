@@ -37,7 +37,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class CategoryFragment extends Fragment implements Pager.OnPageListener<Wares>{
+public class CategoryFragment extends BaseFragment implements Pager.OnPageListener<Wares>{
 
     private RecyclerView mRecyclerview;
     private RecyclerView mRecyclerviewWares;

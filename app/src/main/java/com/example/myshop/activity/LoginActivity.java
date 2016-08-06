@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.ThemedSpinnerAdapter;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -15,10 +16,12 @@ import android.widget.TextView;
 import com.example.myshop.Contants;
 import com.example.myshop.MyShopApplication;
 import com.example.myshop.R;
+import com.example.myshop.bean.BaseBean;
 import com.example.myshop.bean.User;
 import com.example.myshop.bean.msg.LoginRespMsg;
 import com.example.myshop.http.OkHttpHelper;
 import com.example.myshop.http.SpotsCallBack;
+import com.example.myshop.http.TokenCallBack;
 import com.example.myshop.utils.DESUtil;
 import com.example.myshop.utils.ToastUtils;
 import com.example.myshop.widget.ClearEditText;
@@ -94,12 +97,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         finish();
                     }else{
 
-                        application.jumpToTargetActivity(LoginActivity.this);
+                        application.skipToTargetActivity(LoginActivity.this);
                         finish();
-
                     }
                 }
-
 
             }
 

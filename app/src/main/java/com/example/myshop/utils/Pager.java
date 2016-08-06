@@ -100,8 +100,12 @@ public class Pager {
      * 请求数据
      * **/
     private void requestData() {
-        String url = buildUrl();
-        Log.i("url", url);
+
+        HashMap<String, Object> map = mBuilder.params;
+        map.put("curPage",mBuilder.pageIndex);
+        map.put("pageSize",mBuilder.pageSize);
+
+        String url = UrlBuild.buildUrlParams(mBuilder.mUrl, map);
         mHttpHelper.doGet(url, new RequestCallBack(mBuilder.mContext));
     }
 
@@ -138,35 +142,6 @@ public class Pager {
         }
 
     }
-
-    /**
-     * 通过传入的参数构建URL地址
-     * **/
-    private String buildUrl(){
-
-        return mBuilder.mUrl +"?"+buildUrlParams();
-    }
-    private String buildUrlParams() {
-
-        HashMap<String, Object> map = mBuilder.params;
-
-        map.put("curPage",mBuilder.pageIndex);
-        map.put("pageSize",mBuilder.pageSize);
-
-        StringBuffer sb = new StringBuffer();
-        for (Map.Entry<String, Object> entry : map.entrySet()) {
-            sb.append(entry.getKey() + "=" + entry.getValue());
-            sb.append("&");
-        }
-
-        String s = sb.toString();
-        if (s.endsWith("&")) {
-            s = s.substring(0,s.length()-1);
-        }
-        return s;
-    }
-
-
 
     /**
      * ****************** 内部类Builder **********************

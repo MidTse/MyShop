@@ -11,6 +11,7 @@ public class Contants {
 
     public static final String USER_JSON="user_json";
     public static final String TOKEN="token";
+    public  static final int REQUEST_CODE=0;
 
     public static class API {
 

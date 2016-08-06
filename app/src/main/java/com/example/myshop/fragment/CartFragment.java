@@ -1,5 +1,6 @@
 package com.example.myshop.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,16 +15,18 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.example.myshop.R;
+import com.example.myshop.activity.BuildOrderActivity;
 import com.example.myshop.adapter.CartAdapter;
 import com.example.myshop.adapter.decortion.DividerItemDecoration;
 import com.example.myshop.bean.ShoppingCart;
 import com.example.myshop.utils.CartProvider;
+import com.example.myshop.utils.ToastUtils;
 import com.example.myshop.widget.MyToolbar;
 
 import java.util.List;
 
 
-public class CartFragment extends Fragment implements View.OnClickListener{
+public class CartFragment extends BaseFragment implements View.OnClickListener{
 
     public static final int ACTION_EDIT=1;
     public static final int ACTION_CAMPLATE=2;
@@ -52,8 +55,9 @@ public class CartFragment extends Fragment implements View.OnClickListener{
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         mCheckBox = (CheckBox) view.findViewById(R.id.checkbox_all);
         mTextTotal = (TextView) view.findViewById(R.id.txt_total);
-        mBtnOrder = (Button) view.findViewById(R.id.btn_order);
 
+        mBtnOrder = (Button) view.findViewById(R.id.btn_order);
+        mBtnOrder.setOnClickListener(this);
         mBtnDel = (Button) view.findViewById(R.id.btn_del);
         mBtnDel.setOnClickListener(this);
 
@@ -86,21 +90,45 @@ public class CartFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
 
-        if (v.getId() == R.id.btn_del) {
+//        if (v.getId() == R.id.btn_del) {
+//
+//            mAdapter.delItem();
+//
+//        } else {
+//            int action = (int) v.getTag();
+//            if (action == ACTION_EDIT) {
+//
+//                showDelCtrl();
+//
+//            } else if (action == ACTION_CAMPLATE) {
+//
+//                hideDelCtrl();
+//            }
+//
+//        }
 
-            mAdapter.delItem();
+        int viewId = v.getId();
+        switch (viewId) {
 
-        } else {
-            int action = (int) v.getTag();
-            if (action == ACTION_EDIT) {
+            case R.id.btn_del:
+                mAdapter.delItem();
+                break;
+            case R.id.btn_order:
 
-                showDelCtrl();
+                Intent intent = new Intent(getActivity(), BuildOrderActivity.class);
+                startActivity(intent, true);
+                break;
+            default:
+                int action = (int) v.getTag();
+                if (action == ACTION_EDIT) {
 
-            } else if (action == ACTION_CAMPLATE) {
+                    showDelCtrl();
 
-                hideDelCtrl();
-            }
+                } else if (action == ACTION_CAMPLATE) {
 
+                    hideDelCtrl();
+                }
+                break;
         }
 
 

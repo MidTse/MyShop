@@ -66,7 +66,7 @@ public class MyShopApplication extends Application {
         return this.intent;
     }
 
-    public void jumpToTargetActivity(Context context){
+    public void skipToTargetActivity(Context context){
 
         context.startActivity(intent);
         this.intent =null;

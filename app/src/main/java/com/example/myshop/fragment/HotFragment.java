@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class HotFragment extends Fragment implements Pager.OnPageListener<Wares>{
+public class HotFragment extends BaseFragment implements Pager.OnPageListener<Wares>{
 
     private MaterialRefreshLayout mRefreshlayout;
     private RecyclerView mRecyclerview;

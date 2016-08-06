@@ -44,7 +44,7 @@ public class HotWareAdapter extends MySimpleAdapter<Wares>{
                 public void onClick(View v) {
 
                     mProvider.put(item);
-                    ToastUtils.show(mContext, "加入购物车成功！！");
+                    ToastUtils.show(mContext, "成功加入购物车");
                 }
             });
         }

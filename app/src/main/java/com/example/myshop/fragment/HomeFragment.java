@@ -33,14 +33,12 @@ import java.util.List;
 import java.util.Map;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends BaseFragment {
 
     private SliderLayout mSliderLayout;
-
     private RecyclerView mRecyclerView;
 
     private List<Banner> mBanners;
-
     private OkHttpHelper mHttpHelper = OkHttpHelper.getInstance();
 
 
@@ -53,9 +51,7 @@ public class HomeFragment extends Fragment {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_home);
 
         requestBanners();
-
         requestCampaigns();
-
         return view;
 
     }
@@ -111,35 +107,19 @@ public class HomeFragment extends Fragment {
     //通过网络获取活动列表数据
     private void requestCampaigns() {
 
-        mHttpHelper.doGet(Contants.API.CAMPAIGN_HOME_URL, new BaseCallback<List<HomeCampaign>>() {
-            @Override
-            public void onBeforeRequest(Request request) {
-
-            }
+        mHttpHelper.doGet(Contants.API.CAMPAIGN_HOME_URL, new SpotsCallBack<List<HomeCampaign>>(getContext()) {
 
             @Override
-            public void onFailure(Request request, Exception e) {
-
+            public void onSuccess(Response response, List<HomeCampaign> homeCampaigns) {
+                initRecyclerView(homeCampaigns);
             }
-
-            @Override
-            public void onResponse(Response response) {
-
-            }
-
-            @Override
-            public void onSuccess(Response response, List<HomeCampaign> homeCampaignBeen) {
-                initRecyclerView(homeCampaignBeen);
-            }
-
 
             @Override
             public void onError(Response response, int code, Exception e) {
 
             }
+
         });
-
-
 
     }
 
