@@ -3,6 +3,7 @@ package com.example.myshop.activity;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ThemedSpinnerAdapter;
@@ -123,6 +124,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 onBackPressed();
                 break;
             case R.id.txt_toReg:
+                Intent intent = new Intent(LoginActivity.this, RegActivity.class);
+                startActivity(intent);
                 break;
             default:
                 break;

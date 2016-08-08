@@ -8,6 +8,8 @@ import com.example.myshop.bean.User;
 import com.example.myshop.utils.UserLocalData;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
+import cn.smssdk.SMSSDK;
+
 /**
  * Created by Thank on 2016/1/3.
  */
