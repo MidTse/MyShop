@@ -89,6 +89,11 @@
     <style name="smallRedButton" parent="@style/smallButton">
         <item name="android:background">@drawable/bg_btn_style_red</item>
     </style>
+    <style name="smallGreenButton" parent="@style/smallButton">
+        <item name="android:background">@drawable/bg_btn_style_green</item>
+    </style>
+
+
 
     <style name="bigRedButton" parent="@style/bigButton">
         <item name="android:background">@drawable/bg_btn_style_red</item>

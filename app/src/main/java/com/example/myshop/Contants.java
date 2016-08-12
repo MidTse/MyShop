@@ -16,6 +16,10 @@ public class Contants {
     public static final String SMS_KEY = "15d6d1cb54dab";
     public static final String SMS_SECRET = "a49e1a16c5eb9460b6db56537897a821";
 
+    public static final String REG_PHONE = "phone";
+    public static final String REG_PWD = "pwd";
+    public static final String REG_COUNTRY_CODE = "countrycode";
+
     public static class API {
 
         public static final String BASE_URL = "http://112.124.22.238:8081/course_api/";
