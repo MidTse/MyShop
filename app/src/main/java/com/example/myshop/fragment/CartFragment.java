@@ -3,10 +3,8 @@ package com.example.myshop.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +13,10 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.example.myshop.R;
-import com.example.myshop.activity.BuildOrderActivity;
+import com.example.myshop.activity.SubmitOrderActivity;
 import com.example.myshop.adapter.CartAdapter;
-import com.example.myshop.adapter.decortion.DividerItemDecoration;
 import com.example.myshop.bean.ShoppingCart;
 import com.example.myshop.utils.CartProvider;
-import com.example.myshop.utils.ToastUtils;
 import com.example.myshop.widget.MyToolbar;
 
 import java.util.List;
@@ -115,7 +111,7 @@ public class CartFragment extends BaseFragment implements View.OnClickListener{
                 break;
             case R.id.btn_order:
 
-                Intent intent = new Intent(getActivity(), BuildOrderActivity.class);
+                Intent intent = new Intent(getActivity(), SubmitOrderActivity.class);
                 startActivity(intent, true);
                 break;
             default:

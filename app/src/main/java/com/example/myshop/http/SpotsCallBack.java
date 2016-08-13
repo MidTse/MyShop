@@ -1,6 +1,7 @@
 package com.example.myshop.http;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -24,16 +25,16 @@ public abstract class SpotsCallBack<T> extends BaseCallback<T> {
 
     @Override
     public void onFailure(Request request, Exception e) {
-
+        Log.i("SpotsCallBack:failure", "" + e);
     }
 
     @Override
     public void onResponse(Response response) {
-
+        Log.i("SpotsCallBack:reponse", "" + response.code());
     }
 
     @Override
     public void onTokenError(Response response, int code) {
-
+        Log.i("SpotsCallBack:token", code + "");
     }
 }

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".activity.SubmitOrderActivity">
+
+    <com.example.myshop.widget.MyToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:leftButtonIcon="@mipmap/ic_action_back"
+        app:isShowTitle="true"
+        app:title="提交订单"/>
+
+    <ScrollView
+        android:layout_below="@+id/toolbar"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rlayout_userinfo"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/toolbar"
+                android:background="@drawable/selector_list_item"
+                android:focusable="true"
+                android:clickable="true"
+                android:padding="@dimen/largePadding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_userinfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textSize="18sp"
+                        android:text="LittleDay(156****1809)"/>
+
+                    <TextView
+                        android:id="@+id/txt_addr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="三明市建宁县客坊乡水尾村隔边2号"
+                        android:textColor="@color/gray"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_right"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llyout_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rlayout_userinfo"
+                android:orientation="vertical"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/selector_view_block"
+                android:padding="@dimen/largePadding">
+
+                <TextView
+                    android:id="@+id/txt_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/gray"
+                    android:text="订单列表"/>
+
+                <View
+                    style="@style/line_horizontal"
+                    android:layout_marginTop="5dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_list_item"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:layout_marginTop="5dp">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_items"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/icon_right"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llayout_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/llyout_items"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_view_block"
+                android:padding="@dimen/largePadding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/gray"
+                    android:text="支付方式"/>
+                <View
+                    style="@style/line_horizontal"
+                    android:layout_marginTop="5dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/relayout_alipay"
+                    style="@style/pay_relayout_item"
+                    android:tag="alipay">
+
+                    <ImageView
+                        android:id="@+id/img_alipay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_alipay_72"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"/>
+
+                    <LinearLayout
+                        style="@style/pay_item_llayout"
+                        android:layout_toRightOf="@+id/img_alipay">
+
+                        <TextView
+                            style="@style/pay_item_name"
+                            android:text="支付宝"/>
+
+                        <TextView
+                            style="@style/pay_item_desc"
+                            android:text="支持有支付宝，网银用户使用"/>
+
+                    </LinearLayout>
+
+                    <RadioButton
+                        android:id="@+id/rbtn_alipay"
+                        style="@style/pay_item_rbtn"
+                        android:checked="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    style="@style/line_horizontal"
+                    android:layout_marginTop="5dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/relayout_wx"
+                    style="@style/pay_relayout_item"
+                    android:tag="alipay">
+
+                    <ImageView
+                        android:id="@+id/img_wx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_wechat_72"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"/>
+
+                    <LinearLayout
+                        style="@style/pay_item_llayout"
+                        android:layout_toRightOf="@+id/img_wx">
+
+                        <TextView
+                            style="@style/pay_item_name"
+                            android:text="微信"/>
+
+                        <TextView
+                            style="@style/pay_item_desc"
+                            android:text="用微信支付，安全便捷"/>
+
+                    </LinearLayout>
+
+                    <RadioButton
+                        android:id="@+id/rbtn_wx"
+                        style="@style/pay_item_rbtn"/>
+
+                </RelativeLayout>
+
+                <View
+                    style="@style/line_horizontal"
+                    android:layout_marginTop="5dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/relayout_bfb"
+                    style="@style/pay_relayout_item"
+                    android:tag="alipay">
+
+                    <ImageView
+                        android:id="@+id/img_bfb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_bd_72"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"/>
+
+                    <LinearLayout
+                        style="@style/pay_item_llayout"
+                        android:layout_toRightOf="@+id/img_bfb">
+
+                        <TextView
+                            style="@style/pay_item_name"
+                            android:text="百度钱包"/>
+
+                        <TextView
+                            style="@style/pay_item_desc"
+                            android:text="百度安全支付服务"/>
+
+                    </LinearLayout>
+
+                    <RadioButton
+                        android:id="@+id/rbtn_bfb"
+                        style="@style/pay_item_rbtn"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        android:background="#90000000">
+
+        <TextView
+            android:id="@+id/txt_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="实付： ￥2323.00"/>
+
+        <Button
+            android:id="@+id/btn_submitOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            style="@style/bigRedButton"
+            android:text="提交订单"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

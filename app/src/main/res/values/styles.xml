@@ -143,7 +143,52 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:drawablePadding">20dp</item>
         <item name="android:textColor">@color/defaultTextColor</item>
+    </style>
+
+
+    <style name="pay_relayout_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/largePadding</item>
+        <item name="android:paddingBottom">@dimen/largePadding</item>
+        <item name="android:background">@drawable/selector_list_item</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="pay_item_llayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="pay_item_name">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    
+    <style name="pay_item_desc">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+    
+    <style name="pay_item_rbtn">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/selector_checkbox_green</item>
+        <item name="android:button">@null</item>
+        <item name="android:clickable">false</item>
 
     </style>
+
 
 </resources>
