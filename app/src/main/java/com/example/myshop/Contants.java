@@ -20,7 +20,15 @@ public class Contants {
     public static final String REG_PWD = "pwd";
     public static final String REG_COUNTRY_CODE = "countrycode";
 
-    public  static final int REQUEST_CODE_PAYMENT=1;
+    public  static final int REQUEST_CODE_PAYMENT = 1;
+
+    public static final String ORDER_SUCCESS = "success";
+    public static final String ORDER_FAIL = "fail";
+    public static final String ORDER_CANCEL = "cancel";
+    public static final String ORDER_STATUS = "order_status";
+    public static final int NUM_SUCCESS = 1;
+    public static final int NUM_FAIL = -1;
+    public static final int NUM_CANCEL = -2;
 
     public static class API {
 
@@ -36,6 +44,7 @@ public class Contants {
         public static final String LOGIN=BASE_URL +"auth/login";
 
         public static final String ORDER_CREATE = BASE_URL +"/order/create";
+        public static final String ORDER_COMPLEPE = BASE_URL +"/order/complete";
 
     }
 }

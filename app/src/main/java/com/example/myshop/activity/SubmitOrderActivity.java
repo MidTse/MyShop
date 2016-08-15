@@ -1,5 +1,6 @@
 package com.example.myshop.activity;
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -18,10 +19,13 @@ import com.example.myshop.MyShopApplication;
 import com.example.myshop.R;
 import com.example.myshop.adapter.OrderWareAdapter;
 import com.example.myshop.adapter.layoutmanager.FullyLinearLayoutManager;
+import com.example.myshop.bean.Charge;
 import com.example.myshop.bean.ShoppingCart;
+import com.example.myshop.bean.msg.BaseRespMsg;
 import com.example.myshop.bean.msg.CreateOrderRespMsg;
 import com.example.myshop.http.OkHttpHelper;
 import com.example.myshop.http.SpotsCallBack;
+import com.example.myshop.http.TokenCallBack;
 import com.example.myshop.utils.CartProvider;
 import com.example.myshop.utils.JSONUtil;
 import com.example.myshop.widget.MyToolbar;
@@ -77,7 +81,7 @@ public class SubmitOrderActivity extends BaseActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submit_order);
 
-        mProvider = CartProvider.getInstance(this);
+
         initView();
         initEvent();
         initData();
@@ -112,8 +116,9 @@ public class SubmitOrderActivity extends BaseActivity implements View.OnClickLis
     }
 
     private void initData() {
-        List<ShoppingCart> datas = mProvider.getAll();
-        mAdapter = new OrderWareAdapter(this, datas);
+
+        mProvider = CartProvider.getInstance(this);
+        mAdapter = new OrderWareAdapter(this, mProvider.getAll());
 
         FullyLinearLayoutManager layoutManager = new FullyLinearLayoutManager(this);
         layoutManager.setOrientation(GridLayoutManager.HORIZONTAL);
@@ -185,15 +190,21 @@ public class SubmitOrderActivity extends BaseActivity implements View.OnClickLis
         params.put("pay_channel",payChannel);
         params.put("amount",(int)totalPrice+"");
         params.put("addr_id",1+"");
+        params.put("token", MyShopApplication.getInstance().getToken());
 
         mBtnSubmit.setEnabled(false);
-        mHttpHelper.doPost(Contants.API.ORDER_CREATE, params, new SpotsCallBack<CreateOrderRespMsg>(this) {
+        mHttpHelper.doPost(Contants.API.ORDER_CREATE, params, new TokenCallBack<CreateOrderRespMsg>(this) {
 
             @Override
             public void onSuccess(Response response, CreateOrderRespMsg respMsg) {
 
                 mBtnSubmit.setEnabled(true);
-                Log.i("orderName", respMsg.getData().getOrderNum());
+                orderNum = respMsg.getData().getOrderNum();
+                Charge charge = respMsg.getData().getCharge();
+
+                openPaymentActivity(JSONUtil.toJSON(charge));
+
+
             }
 
             @Override
@@ -204,6 +215,80 @@ public class SubmitOrderActivity extends BaseActivity implements View.OnClickLis
 
     }
 
+    private void openPaymentActivity(String charge){
+
+        Intent intent = new Intent();
+        String packageName = getPackageName();
+        ComponentName componentName = new ComponentName(packageName, packageName + ".wxapi.WXPayEntryActivity");
+        intent.setComponent(componentName);
+        intent.putExtra(PaymentActivity.EXTRA_CHARGE, charge);
+        startActivityForResult(intent, Contants.REQUEST_CODE_PAYMENT);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == Contants.REQUEST_CODE_PAYMENT) {
+
+            if (resultCode == Activity.RESULT_OK) {
+                String result = data.getExtras().getString("pay_result");
+                /* 处理返回值
+                 * "success" - payment succeed
+                 * "fail"    - payment failed
+                 * "cancel"  - user canceld
+                 * "invalid" - payment plugin not installed
+                 */
+                switch (result) {
+                    case Contants.ORDER_SUCCESS:
+                        changeOrderStatus(1);
+                        break;
+
+                    case Contants.ORDER_FAIL:
+                        changeOrderStatus(-1);
+                        break;
+
+                    case Contants.ORDER_CANCEL:
+                        changeOrderStatus(-2);
+                        break;
+
+                    default:
+                        changeOrderStatus(0);
+                        break;
+                }
+            }
+        }
+    }
+
+    private void changeOrderStatus(final int status) {
+
+        Map<String,String> params = new HashMap<>(5);
+        params.put("order_num",orderNum);
+        params.put("status",status+"");
+        params.put("token", MyShopApplication.getInstance().getToken());
+
+        mHttpHelper.doPost(Contants.API.ORDER_COMPLEPE, params, new TokenCallBack<BaseRespMsg>(this) {
+            @Override
+            public void onSuccess(Response response, BaseRespMsg respMsg) {
+                showResultAct(status);
+            }
+
+            @Override
+            public void onError(Response response, int code, Exception e) {
+                showResultAct(-1);
+            }
+        });
+
+    }
+
+
+    private void showResultAct(int status) {
+
+        Intent intent = new Intent(SubmitOrderActivity.this, PayResultActivity.class);
+        intent.putExtra(Contants.ORDER_STATUS, status);
+        startActivity(intent);
+        SubmitOrderActivity.this.finish();
+
+    }
 
     private class WareItem {
 

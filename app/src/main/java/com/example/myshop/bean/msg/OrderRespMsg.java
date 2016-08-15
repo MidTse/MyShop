@@ -3,7 +3,9 @@ package com.example.myshop.bean.msg;
 
 import com.example.myshop.bean.Charge;
 
-public class OrderRespMsg{
+import java.io.Serializable;
+
+public class OrderRespMsg implements Serializable{
 
     private String orderNum;
 

@@ -34,6 +34,5 @@ dependencies {
     compile 'com.android.support:design:24.1.1'
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile project(':SMSSDK')
-    compile project(':bdwallet_pay_sdk')
     compile project(':pingpp')
 }

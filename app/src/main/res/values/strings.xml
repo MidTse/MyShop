@@ -20,4 +20,8 @@
     <string name="logout">退出登录</string>
     <string name="token_error">登录失效，请重新登录</string>
 
+    <string name="order_success">支付成功</string>
+    <string name="order_failed">支付失败</string>
+    <string name="order_cancel">支付取消</string>
+
 </resources>

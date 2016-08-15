@@ -27,5 +27,7 @@ android {
 }
 
 dependencies {
+
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':bdwallet_pay_sdk')
 }
