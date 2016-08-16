@@ -69,6 +69,8 @@ public class CartFragment extends BaseFragment implements View.OnClickListener{
         mAdapter = new CartAdapter(getContext(), datas, mCheckBox, mTextTotal);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mAdapter.isCheckAll();
+        mAdapter.showPrice();
 
     }
 

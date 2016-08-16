@@ -7,6 +7,7 @@ public class Contants {
 
     public static final String  COMPAINGAIN_ID="compaigin_id";
     public static final String  WARE="ware";
+    public static final String ADDRESS = "address";
     public  static final String DES_KEY="Cniao5_123456";
 
     public static final String USER_JSON="user_json";
@@ -45,6 +46,10 @@ public class Contants {
 
         public static final String ORDER_CREATE = BASE_URL +"/order/create";
         public static final String ORDER_COMPLEPE = BASE_URL +"/order/complete";
+
+        public static final String ADDRESS_LIST=BASE_URL +"addr/list";
+        public static final String ADDRESS_CREATE=BASE_URL +"addr/create";
+        public static final String ADDRESS_UPDATE=BASE_URL +"addr/update";
 
     }
 }

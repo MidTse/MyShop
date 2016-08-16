@@ -232,6 +232,10 @@
             android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".activity.PayResultActivity">
         </activity>
+        <activity android:name=".activity.AddrListActivity">
+        </activity>
+        <activity android:name=".activity.CreateAddrActivity">
+        </activity>
     </application>
 
 </manifest>

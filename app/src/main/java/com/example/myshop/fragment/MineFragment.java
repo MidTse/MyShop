@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.example.myshop.Contants;
 import com.example.myshop.MyShopApplication;
 import com.example.myshop.R;
+import com.example.myshop.activity.AddrListActivity;
 import com.example.myshop.activity.LoginActivity;
 import com.example.myshop.bean.User;
 import com.example.myshop.utils.ToastUtils;
@@ -30,6 +31,11 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     private ImageView img_head;
     private TextView txt_username;
     private Button btn_loginout;
+    private TextView txtLocation;
+    private TextView txtFavorite;
+    private TextView txtOrders;
+    private TextView txtMsg;
+
 
     @Nullable
     @Override
@@ -50,6 +56,10 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         img_head = (ImageView) view.findViewById(R.id.img_head);
         txt_username = (TextView) view.findViewById(R.id.txt_username);
         btn_loginout = (Button) view.findViewById(R.id.btn_loginout);
+        txtOrders = (TextView) view.findViewById(R.id.txt_orders);
+        txtFavorite = (TextView) view.findViewById(R.id.txt_favorite);
+        txtLocation = (TextView) view.findViewById(R.id.txt_location);
+        txtMsg = (TextView) view.findViewById(R.id.txt_msg);
     }
 
     private void initEvent() {
@@ -57,6 +67,10 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         img_head.setOnClickListener(this);
         txt_username.setOnClickListener(this);
         btn_loginout.setOnClickListener(this);
+        txtOrders.setOnClickListener(this);
+        txtFavorite.setOnClickListener(this);
+        txtLocation.setOnClickListener(this);
+        txtMsg.setOnClickListener(this);
     }
 
     private void skipToLogin() {
@@ -106,6 +120,10 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
 
                 MyShopApplication.getInstance().clearUserData();
                 showUser(null);
+                break;
+            case R.id.txt_location:
+                Intent intent = new Intent(getActivity(), AddrListActivity.class);
+                startActivity(intent);
                 break;
         }
     }

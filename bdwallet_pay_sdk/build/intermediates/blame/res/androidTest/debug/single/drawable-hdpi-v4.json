@@ -168,12 +168,12 @@
         "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\wallet_base_toast_bg.9.png"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ebpay_login_btn_pressed.9.png",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ebpay_login_btn_pressed.9.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\wallet_base_six_no_bg_right.9.png",
         "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\wallet_base_six_no_bg_right.9.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ebpay_login_btn_pressed.9.png",
+        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ebpay_login_btn_pressed.9.png"
     },
     {
         "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ebpay_title_v_line.9.png",

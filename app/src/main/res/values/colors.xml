@@ -346,4 +346,7 @@
     <color name="app_green">#ff45c01a</color>
     <color name="app_green_alpha">#7f45c01a</color>
 
+    <color name="txt_addrColor">#838486</color>
+    <color name="txt_addr_userColor">#262627</color>
+
 </resources>

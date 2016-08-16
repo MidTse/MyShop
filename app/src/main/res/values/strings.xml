@@ -24,4 +24,12 @@
     <string name="order_failed">支付失败</string>
     <string name="order_cancel">支付取消</string>
 
+    <string name="addr_title">地址管理</string>
+    <string name="addr_default">默认地址</string>
+    <string name="addr_create">新建收货地址</string>
+    <string name="addr_set">设为默认</string>
+    <string name="addr_del">删除</string>
+    <string name="addr_edit">编辑</string>
+
+
 </resources>
