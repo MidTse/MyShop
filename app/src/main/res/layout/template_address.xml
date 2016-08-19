@@ -2,11 +2,12 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginBottom="8dp">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_color"
+    android:layout_marginBottom="16dp">
 
-    <View style="@style/line_horizontal"/>
+    <View style="@style/line_horizontal" android:background="@color/lineColor"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -47,7 +48,9 @@
 
     </RelativeLayout>
 
-    <View style="@style/line_horizontal" android:layout_marginLeft="16dp"/>
+    <View style="@style/line_horizontal"
+          android:layout_marginLeft="16dp"
+          android:background="@color/lineColor"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -91,6 +94,6 @@
 
     </RelativeLayout>
 
-    <View style="@style/line_horizontal"/>
+    <View style="@style/line_horizontal" android:background="@color/lineColor"/>
 
 </LinearLayout>

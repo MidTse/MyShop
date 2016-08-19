@@ -1,6 +1,7 @@
 package com.example.myshop.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -14,9 +15,9 @@ import java.util.List;
 /**
  * Created by LittleDay on 2016/8/16.
  */
-public class AddrListAdapter extends MySimpleAdapter<Address> implements View.OnClickListener{
+public class AddrListAdapter extends MySimpleAdapter<Address>{
     private AddressListener addressListener;
-    private Address mAddress;
+
 
     public AddrListAdapter(Context mContext, List<Address> mDatas, AddressListener listener) {
         super(mContext, mDatas, R.layout.template_address);
@@ -25,14 +26,31 @@ public class AddrListAdapter extends MySimpleAdapter<Address> implements View.On
 
     @Override
     public void onBindViewData(MyViewHolder holder, final Address item) {
-        mAddress = item;
+        Address mAddress = item;
+        Log.i("address", item.getConsignee());
         holder.getTextView(R.id.txt_consignee).setText(item.getConsignee());
         holder.getTextView(R.id.txt_phone).setText(replacePhoneNum(item.getPhone()));
         holder.getTextView(R.id.txt_address).setText(item.getAddr());
         CheckBox checkBox = (CheckBox) holder.getView(R.id.chk_default);
 
-        holder.getTextView(R.id.txt_edit).setOnClickListener(this);
-        holder.getTextView(R.id.txt_del).setOnClickListener(this);
+        holder.getTextView(R.id.txt_edit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (addressListener != null) {
+                    addressListener.eidtAddr(item);
+                }
+            }
+        });
+
+        holder.getTextView(R.id.txt_del).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (addressListener != null) {
+
+                    addressListener.delAddr(item);
+                }
+            }
+        });
 
         boolean isDefault = item.getIsDefault();
         if (isDefault) {
@@ -62,33 +80,21 @@ public class AddrListAdapter extends MySimpleAdapter<Address> implements View.On
         return phone.substring(0,phone.length()-(phone.substring(3)).length())+"****"+phone.substring(7);
     }
 
-    @Override
-    public void onClick(View view) {
-        int viewId = view.getId();
-        if (addressListener != null) {
-            switch (viewId) {
 
-                case R.id.txt_edit:
-                    addressListener.eidtAddr(mAddress);
-                    break;
+    public void deleteItem(Address address) {
 
-                case R.id.txt_del:
-                    addressListener.delAddr(mAddress);
-                    break;
-
-                default:
-                    break;
-
-            }
-        }
+        int position = mDatas.indexOf(address);
+        mDatas.remove(position);
+        notifyItemRemoved(position);
 
     }
+
 
     public interface AddressListener {
 
         public void setDefault(Address address);
 
-        public void eidtAddr(Address address);
+        public void eidtAddr(final Address address);
 
         public void delAddr(Address address);
     }

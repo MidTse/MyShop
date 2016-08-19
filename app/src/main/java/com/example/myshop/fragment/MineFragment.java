@@ -123,7 +123,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.txt_location:
                 Intent intent = new Intent(getActivity(), AddrListActivity.class);
-                startActivity(intent);
+                startActivity(intent, true);
                 break;
         }
     }

@@ -108,12 +108,12 @@
         "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\wallet_base_six_no_bg_midle.9.png"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\wallet_base_pwdpay_submit_bg_pressed.9.png",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\wallet_base_pwdpay_submit_bg_pressed.9.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\wallet_base_pwdpay_submit_bg_disable.9.png",
         "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\wallet_base_pwdpay_submit_bg_disable.9.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\wallet_base_pwdpay_submit_bg_pressed.9.png",
+        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\wallet_base_pwdpay_submit_bg_pressed.9.png"
     },
     {
         "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\wallet_base_broken_line.png",

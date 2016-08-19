@@ -7,6 +7,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.myshop.Contants;
 import com.example.myshop.MyShopApplication;
@@ -17,6 +18,7 @@ import com.example.myshop.bean.Address;
 import com.example.myshop.bean.msg.BaseRespMsg;
 import com.example.myshop.http.OkHttpHelper;
 import com.example.myshop.http.TokenCallBack;
+import com.example.myshop.utils.ToastUtils;
 import com.example.myshop.widget.MyToolbar;
 import com.squareup.okhttp.Response;
 
@@ -25,10 +27,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import me.drakeet.materialdialog.MaterialDialog;
+
 public class AddrListActivity extends AppCompatActivity implements View.OnClickListener{
 
     private MyToolbar mToolbar;
     private RecyclerView mRecyclerview;
+    private MaterialDialog mMaterialDialog;
 
     private AddrListAdapter mAdapter;
     private OkHttpHelper mHttpHelper = OkHttpHelper.getInstance();
@@ -80,12 +85,14 @@ public class AddrListActivity extends AppCompatActivity implements View.OnClickL
 
                 @Override
                 public void eidtAddr(Address address) {
-
+                    Intent intent = new Intent(AddrListActivity.this, CreateAddrActivity.class);
+                    intent.putExtra(Contants.ADDRESS, address);
+                    startActivityForResult(intent, Contants.REQUEST_CODE);
                 }
 
                 @Override
                 public void delAddr(Address address) {
-
+                    showDelDialog(address);
                 }
             });
 
@@ -97,6 +104,45 @@ public class AddrListActivity extends AppCompatActivity implements View.OnClickL
             mAdapter.notifyDataSetChanged();
 
         }
+    }
+
+    private void showDelDialog(final Address address) {
+
+        mMaterialDialog = new MaterialDialog(this);
+        mMaterialDialog.setMessage("确定删除地址吗？")
+                .setPositiveButton("确定", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAdapter.deleteItem(address);
+                deleteRemoteAddr(address);
+                mMaterialDialog.dismiss();
+            }
+        }).setNegativeButton("取消", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mMaterialDialog.dismiss();
+            }
+        });
+        mMaterialDialog.show();
+    }
+
+    //删除地址并与服务端同步
+    private void deleteRemoteAddr(Address address) {
+        String token = MyShopApplication.getInstance().getToken();
+        Long id = address.getId();
+        mHttpHelper.doGet(Contants.API.ADDRESS_DELETE + "?id=" + id + "&token=" + token,
+                new TokenCallBack<BaseRespMsg>(this) {
+            @Override
+            public void onSuccess(Response response, BaseRespMsg msg) {
+                ToastUtils.show(AddrListActivity.this, "删除成功");
+            }
+
+            @Override
+            public void onError(Response response, int code, Exception e) {
+
+            }
+        });
+
     }
 
 
@@ -138,10 +184,15 @@ public class AddrListActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.toolbar_rightButton:
                 Intent intent = new Intent(AddrListActivity.this, CreateAddrActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, Contants.REQUEST_CODE);
                 break;
             default:
                 break;
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        requestData();
     }
 }

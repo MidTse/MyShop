@@ -50,6 +50,6 @@ public class Contants {
         public static final String ADDRESS_LIST=BASE_URL +"addr/list";
         public static final String ADDRESS_CREATE=BASE_URL +"addr/create";
         public static final String ADDRESS_UPDATE=BASE_URL +"addr/update";
-
+        public static final String ADDRESS_DELETE=BASE_URL +"addr/del";
     }
 }

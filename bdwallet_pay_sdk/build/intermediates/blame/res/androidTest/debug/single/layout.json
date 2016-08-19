@@ -116,12 +116,12 @@
         "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_layout_dialog_base.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_one_key_tip_layout.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_one_key_tip_layout.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_plugin.xml",
         "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_plugin.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_one_key_tip_layout.xml",
+        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_one_key_tip_layout.xml"
     },
     {
         "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_pc_pass.xml",
