@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import me.drakeet.materialdialog.MaterialDialog;
 
@@ -37,8 +39,12 @@ public class AddrListActivity extends AppCompatActivity implements View.OnClickL
 
     private AddrListAdapter mAdapter;
     private OkHttpHelper mHttpHelper = OkHttpHelper.getInstance();
+
+    private String token;
+    private String TAG = "AddrListActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addrlist);
 
@@ -52,17 +58,19 @@ public class AddrListActivity extends AppCompatActivity implements View.OnClickL
         mToolbar.setRightButtonOnClickListener(this);
         mToolbar.getmLeftButton().setOnClickListener(this);
 
+        token = MyShopApplication.getInstance().getToken();
+
         requestData();
     }
 
     //请求地址列表
     private void requestData() {
         long userId = MyShopApplication.getInstance().getUser().getId();
-        String token = MyShopApplication.getInstance().getToken();
         mHttpHelper.doGet(Contants.API.ADDRESS_LIST + "?user_id=" + userId + "&token=" + token, new TokenCallBack<List<Address>>(this) {
 
             @Override
             public void onSuccess(Response response, List<Address> datas) {
+
                 showData(datas);
             }
 
@@ -75,6 +83,7 @@ public class AddrListActivity extends AppCompatActivity implements View.OnClickL
 
     //显示地址列表
     private void showData(List<Address> datas) {
+
         Collections.sort(datas);
         if (mAdapter == null) {
             mAdapter = new AddrListAdapter(this, datas, new AddrListAdapter.AddressListener() {
@@ -101,6 +110,8 @@ public class AddrListActivity extends AppCompatActivity implements View.OnClickL
             mRecyclerview.setItemAnimator(new DefaultItemAnimator());
         } else {
 
+//            mAdapter.notifyDataSetChanged();
+            mAdapter.refreshData(datas);
             mAdapter.notifyDataSetChanged();
 
         }
@@ -128,12 +139,15 @@ public class AddrListActivity extends AppCompatActivity implements View.OnClickL
 
     //删除地址并与服务端同步
     private void deleteRemoteAddr(Address address) {
-        String token = MyShopApplication.getInstance().getToken();
         Long id = address.getId();
-        mHttpHelper.doGet(Contants.API.ADDRESS_DELETE + "?id=" + id + "&token=" + token,
-                new TokenCallBack<BaseRespMsg>(this) {
+        Map<String,String> params = new HashMap<>();
+        params.put("id", "" + id);
+        params.put("token", token);
+
+        mHttpHelper.doPost(Contants.API.ADDRESS_DELETE, params, new TokenCallBack<BaseRespMsg>(this) {
+
             @Override
-            public void onSuccess(Response response, BaseRespMsg msg) {
+            public void onSuccess(Response response, BaseRespMsg baseRespMsg) {
                 ToastUtils.show(AddrListActivity.this, "删除成功");
             }
 
@@ -143,20 +157,21 @@ public class AddrListActivity extends AppCompatActivity implements View.OnClickL
             }
         });
 
+
     }
 
 
     //更新默认地址
-    private void updateDefaultAddr(Address address) {
+    public void updateDefaultAddr(Address address) {
 
-        Map<String,String> params = new HashMap<>();
+        Map<String,Object> params = new HashMap<>();
         params.put("id",address.getId()+"");
         params.put("consignee",address.getConsignee());
         params.put("phone",address.getPhone());
         params.put("addr",address.getAddr());
         params.put("zip_code",address.getZip_code());
         params.put("is_default",address.getIsDefault()+"");
-        params.put("token", MyShopApplication.getInstance().getToken());
+        params.put("token", token);
 
         mHttpHelper.doPost(Contants.API.ADDRESS_UPDATE, params, new TokenCallBack<BaseRespMsg>(this) {
             @Override
@@ -169,7 +184,7 @@ public class AddrListActivity extends AppCompatActivity implements View.OnClickL
 
             @Override
             public void onError(Response response, int code, Exception e) {
-
+                Log.i(TAG, "onError");
             }
         });
     }
@@ -193,6 +208,7 @@ public class AddrListActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
         requestData();
     }
 }

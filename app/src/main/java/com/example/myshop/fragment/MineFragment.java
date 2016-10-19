@@ -17,14 +17,16 @@ import com.example.myshop.Contants;
 import com.example.myshop.MyShopApplication;
 import com.example.myshop.R;
 import com.example.myshop.activity.AddrListActivity;
+import com.example.myshop.activity.FavoriteActivity;
 import com.example.myshop.activity.LoginActivity;
+import com.example.myshop.activity.OrderListActivity;
 import com.example.myshop.bean.User;
 import com.example.myshop.utils.ToastUtils;
 import com.squareup.picasso.Picasso;
 
 
 /**
- * Created by Ivan on 15/9/22.
+ * Created by xhz
  */
 public class MineFragment extends BaseFragment implements View.OnClickListener {
 
@@ -124,6 +126,16 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
             case R.id.txt_location:
                 Intent intent = new Intent(getActivity(), AddrListActivity.class);
                 startActivity(intent, true);
+                break;
+
+            case R.id.txt_orders:
+                Intent orderIntent = new Intent(getActivity(), OrderListActivity.class);
+                startActivity(orderIntent, true);
+                break;
+
+            case R.id.txt_favorite:
+                Intent favIntent = new Intent(getActivity(), FavoriteActivity.class);
+                startActivity(favIntent, true);
                 break;
         }
     }

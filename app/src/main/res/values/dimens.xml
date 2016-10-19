@@ -34,4 +34,8 @@
     <dimen name="ware_grid_img_height">100dp</dimen>
     <dimen name="category_layout_width">120dp</dimen>
 
+    <dimen name="littleMargin">6.0dip</dimen>
+    <dimen name="middleMargin">10.0dip</dimen>
+    <dimen name="normalMargin">12.0dip</dimen>
+
 </resources>

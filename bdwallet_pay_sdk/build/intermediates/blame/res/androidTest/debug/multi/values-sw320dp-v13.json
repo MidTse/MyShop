@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-sw320dp-v13\\values-sw320dp-v13.xml",
+        "outputFile": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-sw320dp-v13\\values-sw320dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 111
                 },
                 "from": {
-                    "file": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\values-sw320dp-v13\\values-sw320dp-v13.xml",
+                    "file": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\values-sw320dp-v13\\values-sw320dp-v13.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

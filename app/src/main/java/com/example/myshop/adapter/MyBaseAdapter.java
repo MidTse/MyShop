@@ -80,6 +80,20 @@ public abstract class MyBaseAdapter<T, H extends MyViewHolder> extends RecyclerV
         }
     }
 
+    public void refreshData(List<T> list){
+
+        if(list !=null && list.size()>0){
+
+            clear();
+            int size = list.size();
+            for (int i=0;i<size;i++){
+                mDatas.add(i,list.get(i));
+                notifyItemInserted(i);
+            }
+
+        }
+    }
+
     public abstract void onBindViewData(H holder, T item);
 
     public interface OnItemClickListener {

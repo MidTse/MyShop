@@ -57,12 +57,18 @@ public class OkHttpHelper {
 
     }
 
-    public void doPost(String url, Map<String,String> param, BaseCallback callback) {
+    public void doTokenGet(String u) {
+
+    }
+
+    public void doPost(String url, Map param, BaseCallback callback) {
 
         Request request = buildRequest(url, HttpMethodType.POST, param);
         doRequest(request, callback);
 
     }
+
+
 
     public void doRequest(final Request request, final BaseCallback callback) {
 
@@ -128,7 +134,8 @@ public class OkHttpHelper {
 
             for (Map.Entry<String,String> entry : params.entrySet()) {
 
-                formEncodingBuilder.add(entry.getKey(), entry.getValue());
+//                formEncodingBuilder.add(entry.getKey(), entry.getValue());
+                formEncodingBuilder.add(entry.getKey(),entry.getValue()==null?"":entry.getValue().toString());
             }
 
         }

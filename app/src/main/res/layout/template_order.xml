@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_list_item"
+    android:layout_marginBottom="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/largePadding">
+
+        <TextView
+            android:id="@+id/txt_order_seller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="京东"
+            android:layout_marginLeft="@dimen/middleMargin"/>
+
+        <TextView
+            android:id="@+id/txt_order_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="已成交"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/middleMargin" />
+
+    </RelativeLayout>
+
+    <View style="@style/line_horizontal"
+        android:layout_marginLeft="16dp"
+        android:background="@color/lineColor"/>
+
+    <com.w4lle.library.NineGridlayout
+        android:id="@+id/NineGridlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"/>
+
+    <View style="@style/line_horizontal"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/lineColor"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:id="@+id/txt_order_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="实付金额：¥5000.00"
+            android:textSize="16sp"
+            android:layout_marginLeft="12dp"
+            android:layout_centerVertical="true"/>
+
+        <Button
+            android:id="@+id/btn_order_rebuy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="再次购买"
+            android:textSize="14sp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            style="@style/smallRedButton" />
+
+        <Button
+            android:id="@+id/btn_order_assess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="评价晒单"
+            android:textSize="14sp"
+            android:layout_toLeftOf="@+id/btn_order_rebuy"
+            android:layout_marginRight="6dp"
+            style="@style/smallGreyButton" />
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_list_item"
+    android:padding="6dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/draweeview"
+        android:layout_width="@dimen/ware_img_width"
+        android:layout_height="@dimen/ware_img_width"
+        android:background="@null"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        app:viewAspectRatio="1"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_toRightOf="@+id/draweeview">
+
+
+        <TextView
+            android:id="@+id/txt_fav_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ware_title"/>
+
+        <View
+            style="@style/line_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/txt_fav_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                style="@style/ware_price"/>
+
+            <Button
+                android:id="@+id/btn_fav_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/smallRedButton"
+                android:layout_marginTop="20dp"
+                android:text="找相似"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+
+            <Button
+                android:id="@+id/btn_fav_del"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="删除"
+                android:textSize="14sp"
+                android:layout_toLeftOf="@+id/btn_fav_like"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                style="@style/smallGreyButton" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

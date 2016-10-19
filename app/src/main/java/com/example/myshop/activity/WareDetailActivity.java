@@ -1,23 +1,30 @@
 package com.example.myshop.activity;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
 
 import com.example.myshop.Contants;
+import com.example.myshop.MyShopApplication;
 import com.example.myshop.R;
+import com.example.myshop.bean.Favorites;
 import com.example.myshop.bean.Wares;
+import com.example.myshop.http.OkHttpHelper;
+import com.example.myshop.http.TokenCallBack;
 import com.example.myshop.utils.CartProvider;
 import com.example.myshop.utils.ToastUtils;
 import com.example.myshop.widget.MyToolbar;
+import com.squareup.okhttp.Response;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class WareDetailActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -27,6 +34,13 @@ public class WareDetailActivity extends AppCompatActivity implements View.OnClic
     private CartProvider mCartProvider;
     private WebInterface mAppInterface;
     private Wares ware;
+
+    private OkHttpHelper mHttpHelper = OkHttpHelper.getInstance();
+
+    private String token;
+    private Long userId;
+    private Map<String, Object> params;
+    private String TAG = "WareDetailActivity";
 
 
 
@@ -39,6 +53,8 @@ public class WareDetailActivity extends AppCompatActivity implements View.OnClic
         getIntentData();
         initView();
         initEvent();
+
+
 
     }
 
@@ -77,6 +93,42 @@ public class WareDetailActivity extends AppCompatActivity implements View.OnClic
         mAppInterface = new WebInterface(this);
         webView.addJavascriptInterface(mAppInterface, "appInterface");
         webView.setWebViewClient(new WebClient());
+    }
+
+    private void addFavorite() {
+//
+//        User user = MyShopApplication.getInstance().getUser();
+//
+//        if(user==null){
+//            startActivity(new Intent(this,LoginActivity.class),true);
+//        }
+
+        token = MyShopApplication.getInstance().getToken();
+        userId = MyShopApplication.getInstance().getUser().getId();
+
+        if (params == null) {
+            params = new HashMap<>();
+        } else {
+            params.clear();
+        }
+
+        params.put("user_id", "" + userId);
+        params.put("token", token);
+        params.put("ware_id", "" + ware.getId());
+
+        mHttpHelper.doPost(Contants.API.FAVORITE_CREATE, params, new TokenCallBack(this) {
+
+            @Override
+            public void onSuccess(Response response, Object o) {
+                ToastUtils.show(WareDetailActivity.this, "成功添加至收藏夹");
+            }
+
+            @Override
+            public void onError(Response response, int code, Exception e) {
+
+            }
+        });
+
     }
 
 
@@ -129,7 +181,7 @@ public class WareDetailActivity extends AppCompatActivity implements View.OnClic
 
         @JavascriptInterface
         public void buy(long id) {
-
+            addFavorite();
 
         }
 

@@ -190,9 +190,11 @@ public class CreateAddrActivity extends AppCompatActivity implements View.OnClic
             mHttpHelper.doPost(url, params, new TokenCallBack<BaseRespMsg>(this) {
                 @Override
                 public void onSuccess(Response response, BaseRespMsg msg) {
-                    if (msg.getStatus() == 200) {
-                        setResult(RESULT_OK);
+                    if(msg.getStatus() == BaseRespMsg.STATUS_SUCCESS){
                         ToastUtils.show(CreateAddrActivity.this, "操作成功");
+                        setResult(RESULT_OK);
+                        finish();
+
                     }
 
 

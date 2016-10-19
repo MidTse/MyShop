@@ -5,7 +5,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\android-studio\gradle\gradle-2.14.1" />
+        <option name="gradleHome" value="G:\Develop\android-studio\gradle\gradle-2.14.1" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -15,15 +15,7 @@
             <option value="$PROJECT_DIR$/pingpp" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/SMSSDK" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/bdwallet_pay_sdk" />
-            <option value="$PROJECT_DIR$/pingpp" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

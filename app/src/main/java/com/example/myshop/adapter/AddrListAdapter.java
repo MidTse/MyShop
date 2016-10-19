@@ -26,8 +26,7 @@ public class AddrListAdapter extends MySimpleAdapter<Address>{
 
     @Override
     public void onBindViewData(MyViewHolder holder, final Address item) {
-        Address mAddress = item;
-        Log.i("address", item.getConsignee());
+
         holder.getTextView(R.id.txt_consignee).setText(item.getConsignee());
         holder.getTextView(R.id.txt_phone).setText(replacePhoneNum(item.getPhone()));
         holder.getTextView(R.id.txt_address).setText(item.getAddr());
@@ -53,6 +52,7 @@ public class AddrListAdapter extends MySimpleAdapter<Address>{
         });
 
         boolean isDefault = item.getIsDefault();
+        checkBox.setChecked(isDefault);
         if (isDefault) {
 
             checkBox.setText("默认地址");
@@ -92,10 +92,10 @@ public class AddrListAdapter extends MySimpleAdapter<Address>{
 
     public interface AddressListener {
 
-        public void setDefault(Address address);
+        public void setDefault(final Address address);
 
         public void eidtAddr(final Address address);
 
-        public void delAddr(Address address);
+        public void delAddr(final Address address);
     }
 }

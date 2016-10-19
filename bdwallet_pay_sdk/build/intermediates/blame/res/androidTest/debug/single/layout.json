@@ -1,166 +1,166 @@
 [
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_discount_item.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_discount_item.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_layout_dialog_base.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_layout_dialog_base.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_bind_card_no.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_bind_card_no.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_menu_item_view.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_menu_item_view.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_sectips.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_sectips.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_setandconfirm_pwd.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_setandconfirm_pwd.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_one_key_pay.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_one_key_pay.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_one_key_pay.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_one_key_pay.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\bd_wallet_sign_bank_info.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\bd_wallet_sign_bank_info.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_view_title_bar.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_view_title_bar.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_list_item_bond_card_select.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_list_item_bond_card_select.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_pluginl_detail.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_pluginl_detail.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_menu_item_view.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_menu_item_view.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_base_bind.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_base_bind.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_bond_card_view.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_bond_card_view.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_dialog_tip.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_dialog_tip.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_pluginl_detail.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_pluginl_detail.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_one_key_tip_layout.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_one_key_tip_layout.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_pay_result_benefit.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_pay_result_benefit.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_pwdpay_payment_select_item.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_pwdpay_payment_select_item.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_dialog_tip.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_dialog_tip.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_pay_result_benefit.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_pay_result_benefit.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_pwdpay_payment_select.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_pwdpay_payment_select.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_action_bar.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_action_bar.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_setandconfirm_pwd.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_setandconfirm_pwd.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_select_balance_dialog.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_select_balance_dialog.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_bind_creditcard_detail.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_bind_creditcard_detail.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_bind_card_no.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_bind_card_no.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_dialog_notitle.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_dialog_notitle.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_bond_card_view.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_bond_card_view.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_activity_welcome.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_activity_welcome.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_abc_sms.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_abc_sms.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_dialog_image.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_dialog_image.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\bd_wallet_sign_channel_list.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\bd_wallet_sign_channel_list.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\bd_wallet_sign_channel_list.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\bd_wallet_sign_channel_list.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_webview.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_webview.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_activity_bind_sms.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_activity_bind_sms.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_list_item_bond_card_select.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_list_item_bond_card_select.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_base_bind.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_base_bind.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_pwdpay_payment_select.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_pwdpay_payment_select.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_update_layout_dialog_base.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_update_layout_dialog_base.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_layout_loading_dialog.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_layout_loading_dialog.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_set_pwd.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_set_pwd.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_dialog_image.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_dialog_image.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_view_six_pwd.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_view_six_pwd.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_dialog_notitle.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_dialog_notitle.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_action_bar.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_action_bar.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_bind_creditcard_detail.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_bind_creditcard_detail.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_layout_loading_dialog.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_layout_loading_dialog.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_pc_pass.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_pc_pass.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_pwdpay_activity.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_pwdpay_activity.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_sectips.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_sectips.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\bd_wallet_sign_channel_page.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\bd_wallet_sign_channel_page.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_set_pwd.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_set_pwd.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_webview.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_webview.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_toast.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_toast.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_layout_dialog_base.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_layout_dialog_base.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\bd_wallet_sign_bank_info.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\bd_wallet_sign_bank_info.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_plugin.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_plugin.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_bind_card_detail.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_bind_card_detail.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_one_key_tip_layout.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_one_key_tip_layout.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_discount_item.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_discount_item.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_pc_pass.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_pc_pass.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_login.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_login.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_activity_order_home.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_activity_order_home.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_activity_welcome.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_activity_welcome.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_login.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_login.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_activity_bind_sms.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_activity_bind_sms.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_activity_pay_result.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_activity_pay_result.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_pwdpay_activity.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_pwdpay_activity.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_abc_sms.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_abc_sms.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_activity_pay_result.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_activity_pay_result.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_toast.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_toast.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\bd_wallet_sign_channel_page.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\bd_wallet_sign_channel_page.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_layout_bind_card_detail.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_layout_bind_card_detail.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_activity_order_home.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_activity_order_home.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_view_title_bar.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_view_title_bar.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_update_layout_dialog_base.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_update_layout_dialog_base.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_pwdpay_payment_select_item.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_pwdpay_payment_select_item.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_view_six_pwd.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_view_six_pwd.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\ebpay_select_balance_dialog.xml",
-        "source": "D:\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\ebpay_select_balance_dialog.xml"
+        "merged": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\wallet_base_plugin.xml",
+        "source": "D:\\WorkSpace\\AndroidStudioProject\\MyShop\\bdwallet_pay_sdk\\build\\intermediates\\bundles\\debug\\res\\layout\\wallet_base_plugin.xml"
     }
 ]

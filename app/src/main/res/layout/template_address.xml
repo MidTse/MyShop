@@ -55,26 +55,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
-
-        <CheckBox
-            android:id="@+id/chk_default"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:paddingLeft="10dp"
-            android:button="@drawable/selector_checkbox_green"
-            android:textColor="@color/txt_addrColor"
-            android:textSize="16sp"
-            android:clickable="false"
-            android:text="设为默认"/>
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
 
         <TextView
             android:id="@+id/txt_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="编辑"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textColor="@color/txt_addrColor"
             android:drawableLeft="@mipmap/ic_action_edit_32"
             android:gravity="center_vertical"
@@ -86,11 +77,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="删除"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textColor="@color/txt_addrColor"
             android:drawableLeft="@mipmap/ic_action_trash_32"
             android:gravity="center_vertical"
             android:layout_alignParentRight="true"/>
+
+        <CheckBox
+            android:id="@+id/chk_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:button="@drawable/selector_checkbox_green"
+            android:textColor="@color/txt_addrColor"
+            android:textSize="14sp"
+            android:clickable="false"
+            android:text="设为默认"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
     </RelativeLayout>
 

@@ -92,6 +92,10 @@
     <style name="smallGreenButton" parent="@style/smallButton">
         <item name="android:background">@drawable/bg_btn_style_green</item>
     </style>
+    <style name="smallGreyButton" parent="@style/smallButton">
+        <item name="android:textColor">@color/grey_btn_text_color</item>
+        <item name="android:background">@drawable/bg_btn_style_grey</item>
+    </style>
 
 
 
